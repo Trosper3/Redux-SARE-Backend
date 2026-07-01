@@ -6,16 +6,15 @@ import json
 import os
 import sys
 import importlib.util
-import automata_utils
-import regex_engine
-import convexHull_engine
-import knapsack_engine
-import subset_sum_engine
-import optimal_pump_scheduling_engine
-import min_st_cut_dual_engine
-import water_network_engine
-import farm_selection_engine
-import water_scheduling_engine
+from engines import regex_engine
+from engines import convexHull_engine
+from engines import knapsack_engine
+from engines import subset_sum_engine
+from engines import optimal_pump_scheduling_engine
+from engines import min_st_cut_dual_engine
+from engines import water_network_engine
+from engines import farm_selection_engine
+from engines import water_scheduling_engine
 import batch_baseline
 import drought_presets
 
@@ -58,7 +57,7 @@ app.add_middleware(
 )
 
 # Absolute path tracking to discover dynamic json schema files
-SPEC_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "spec"))
+SPEC_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "data"))
 
 class ProblemSolveRequest(BaseModel):
     problem_id: str

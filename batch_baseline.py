@@ -13,7 +13,7 @@ import json
 import os
 from typing import Any, Dict, List, Optional
 
-_FIXTURE_PATH = os.path.join(os.path.dirname(__file__), "fixtures", "baseline_schedule.json")
+_FIXTURE_PATH = os.path.join(os.path.dirname(__file__), "data", "baseline_schedule.json")
 
 
 class BatchBaseline:
