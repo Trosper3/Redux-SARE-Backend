@@ -1,0 +1,28 @@
+{
+  "_comment": "Illustrative baseline schedule — synthetic, not real tribal data. Represents a committed overnight-batch run for the demo water network.",
+  "network_snapshot": {
+    "source": "aquifer",
+    "sink": "virtual_sink",
+    "pipes": [
+      { "from": "aquifer", "to": "j_north", "capacity": 7  },
+      { "from": "aquifer", "to": "j_south", "capacity": 10 },
+      { "from": "j_north", "to": "farm_1",  "capacity": 5  },
+      { "from": "j_north", "to": "farm_2",  "capacity": 7  },
+      { "from": "j_south", "to": "farm_3",  "capacity": 6  },
+      { "from": "j_south", "to": "farm_4",  "capacity": 4  }
+    ]
+  },
+  "committed": {
+    "max_flow": 16,
+    "selected_farms": ["f1", "f3", "f4"],
+    "total_value": 310,
+    "schedule_mode": "coloring",
+    "schedule": [
+      { "farmId": "f1", "startHr": 0, "endHr": 4,  "slot": 0 },
+      { "farmId": "f3", "startHr": 0, "endHr": 5,  "slot": 0 },
+      { "farmId": "f4", "startHr": 5, "endHr": 9,  "slot": 1 }
+    ],
+    "committed_at": "2026-06-29T06:00:00Z",
+    "notes": "Overnight batch run. Authoritative commitment for 2026-06-30."
+  }
+}

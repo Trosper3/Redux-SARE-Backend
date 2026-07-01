@@ -1,0 +1,53 @@
+{
+  "id": "graph-coloring",
+  "name": "Graph Coloring Problem",
+  "category": "NP-Complete",
+  "description": "Assign one of k colors to each vertex so adjacent vertices have different colors.",
+  "details": {
+    "summary": "Find a valid vertex coloring using at most k colors.",
+    "difficulty": "intermediate",
+    "learningGoals": [
+      "Understand adjacency constraints in graph coloring.",
+      "See how backtracking searches for a valid color assignment.",
+      "Recognize why the problem becomes hard as the graph grows."
+    ],
+    "examples": ["A, B, C, D", "A-B\nB-C\nC-D", "3 colors"],
+    "notes": [
+      "Vertices are entered as comma-separated names.",
+      "Edges are entered one per line using A-B or A,B.",
+      "The solver uses exact backtracking, so large dense graphs may take longer."
+    ],
+    "complexity": {
+      "time": "O(k^n) in the worst case for exact backtracking",
+      "space": "O(n + m) for the graph plus recursion state"
+    }
+  },
+  "visualizationType": "graph",
+  "tags": ["graph-theory", "backtracking", "np-complete"],
+  "api": {
+    "solvePath": "/api/solve"
+  },
+  "inputs": [
+    {
+      "key": "vertices",
+      "label": "Vertices",
+      "type": "textarea",
+      "defaultValue": "A, B, C, D, E",
+      "description": "Comma-separated vertex names."
+    },
+    {
+      "key": "edges",
+      "label": "Edges",
+      "type": "textarea",
+      "defaultValue": "A-B\nA-C\nB-C\nC-D\nD-E",
+      "description": "One edge per line, e.g. A-B."
+    },
+    {
+      "key": "colors",
+      "label": "Number of Colors",
+      "type": "number",
+      "defaultValue": 3,
+      "description": "Maximum number of colors allowed."
+    }
+  ]
+}

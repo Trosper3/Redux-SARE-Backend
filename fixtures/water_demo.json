@@ -1,0 +1,27 @@
+{
+  "nodes": [
+    { "id": "aquifer",  "kind": "aquifer",  "x": 100, "y": 300 },
+    { "id": "j_north",  "kind": "junction", "x": 300, "y": 150 },
+    { "id": "j_south",  "kind": "junction", "x": 300, "y": 450 },
+    { "id": "farm_1",   "kind": "farm",     "x": 550, "y": 75  },
+    { "id": "farm_2",   "kind": "farm",     "x": 550, "y": 225 },
+    { "id": "farm_3",   "kind": "farm",     "x": 550, "y": 375 },
+    { "id": "farm_4",   "kind": "farm",     "x": 550, "y": 525 }
+  ],
+  "pipes": [
+    { "from": "aquifer",  "to": "j_north",  "capacity": 7  },
+    { "from": "aquifer",  "to": "j_south",  "capacity": 10 },
+    { "from": "j_north",  "to": "farm_1",   "capacity": 5  },
+    { "from": "j_north",  "to": "farm_2",   "capacity": 7  },
+    { "from": "j_south",  "to": "farm_3",   "capacity": 6  },
+    { "from": "j_south",  "to": "farm_4",   "capacity": 4  }
+  ],
+  "farms": [
+    { "id": "f1", "nodeId": "farm_1", "demand": 4, "value": 100, "durationHrs": 4, "neighbors": ["f2"] },
+    { "id": "f2", "nodeId": "farm_2", "demand": 5, "value": 80,  "durationHrs": 3, "neighbors": ["f1"] },
+    { "id": "f3", "nodeId": "farm_3", "demand": 6, "value": 120, "durationHrs": 5, "neighbors": ["f4"] },
+    { "id": "f4", "nodeId": "farm_4", "demand": 3, "value": 90,  "durationHrs": 4, "neighbors": ["f3"] }
+  ],
+  "source": "aquifer",
+  "sink": "virtual_sink"
+}

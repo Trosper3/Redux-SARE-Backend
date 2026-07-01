@@ -1,0 +1,46 @@
+{
+  "id": "bin-packing",
+  "name": "Bin Packing Problem",
+  "category": "NP-Hard",
+  "description": "Pack weighted items into the fewest bins possible without exceeding capacity.",
+  "details": {
+    "summary": "Minimize the number of bins needed to place all items under a fixed capacity.",
+    "difficulty": "intermediate",
+    "learningGoals": [
+      "See how bin packing explores placements recursively.",
+      "Understand why greedy packing can miss the optimum.",
+      "Compare packed bins with the remaining capacity in each bin."
+    ],
+    "examples": ["A, 4", "B, 6", "C, 5", "Capacity 10"],
+    "notes": [
+      "Items are entered one per line as weight or name, weight.",
+      "The solver uses exact search with pruning, so small instances are best.",
+      "This version minimizes the number of bins used."
+    ],
+    "complexity": {
+      "time": "Exponential in the worst case for exact search",
+      "space": "O(n) recursion plus the current packing state"
+    }
+  },
+  "visualizationType": "grid",
+  "tags": ["packing", "backtracking", "np-hard"],
+  "api": {
+    "solvePath": "/api/solve"
+  },
+  "inputs": [
+    {
+      "key": "items",
+      "label": "Items",
+      "type": "textarea",
+      "defaultValue": "A, 4\nB, 6\nC, 5\nD, 3\nE, 2",
+      "description": "One item per line. Use either 'weight' or 'name, weight'."
+    },
+    {
+      "key": "capacity",
+      "label": "Bin Capacity",
+      "type": "number",
+      "defaultValue": 10,
+      "description": "Maximum total weight allowed in each bin."
+    }
+  ]
+}
