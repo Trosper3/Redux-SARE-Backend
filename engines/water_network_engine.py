@@ -22,7 +22,7 @@ from collections import deque
 from copy import deepcopy
 from typing import Any, Dict, List, Optional, Set, Tuple
 
-from water_model import parse_water_network, water_to_flow_inputs
+from .water_model import parse_water_network, water_to_flow_inputs
 
 
 # ── Low-level residual-graph helpers ──────────────────────────────────────────

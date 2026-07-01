@@ -31,8 +31,8 @@ import time
 from copy import deepcopy
 from typing import Any, Dict, List, Optional, Set, Tuple
 
-from water_model import WaterFarm, WaterNetwork, parse_water_network, water_to_flow_inputs
-from water_network_engine import _run_max_flow
+from .water_model import WaterFarm, WaterNetwork, parse_water_network, water_to_flow_inputs
+from .water_network_engine import _run_max_flow
 
 FPTAS_THRESHOLD = 10_000
 EXACT_TIMEOUT_SEC = 10.0   # wall-clock cap; falls back to greedy on timeout

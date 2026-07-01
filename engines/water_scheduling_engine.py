@@ -30,9 +30,9 @@ import time
 from copy import deepcopy
 from typing import Any, Dict, List, Optional, Set
 
-from water_model import WaterFarm, WaterNetwork, parse_water_network, water_to_flow_inputs
-from water_network_engine import _run_max_flow
-from farm_selection_engine import _reachable_from_source
+from .water_model import WaterFarm, WaterNetwork, parse_water_network, water_to_flow_inputs
+from .water_network_engine import _run_max_flow
+from .farm_selection_engine import _reachable_from_source
 
 EXACT_TIMEOUT_SEC = 5.0
 
